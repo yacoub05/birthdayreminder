@@ -32,7 +32,7 @@ const handleSubmit =(e)=>{
 }
 
     return (
-        <div style={{ width:'850px', marginLeft:'500px'}}>
+        <div style={{ width:'850px',marginTop:'25px',marginBottom:'20px', marginLeft:'500px', border: '1px solid whitesmoke'}}>
         <form onSubmit = {handleSubmit}>
             <TextField id="outlined-basic"  style={{marginRight:180}}  value={name} label="Name" size ='small' variant="outlined"  onChange ={handleChange}/>
             {/* <input
