@@ -1,10 +1,17 @@
 import React, {useState} from 'react'
-
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import DatePicker from 'react-datepicker'
+// import 'react-datepicker/dist/react-datepicker.css'
 import TextField from '@material-ui/core/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
 
 function BdayForm({selectedDate, setSelectedDate,name,setName, birthdays, setBirthdays}) {
+
+const [value, setValue] = useState(null);    
+
 
 const handleChange =(e)=>{
     setName(e.target.value);
@@ -25,7 +32,7 @@ const handleSubmit =(e)=>{
 }
 
     return (
-        
+        <div style={{ width:'850px', marginLeft:'500px'}}>
         <form onSubmit = {handleSubmit}>
             <TextField id="outlined-basic"  style={{marginRight:180}}  value={name} label="Name" size ='small' variant="outlined"  onChange ={handleChange}/>
             {/* <input
@@ -39,12 +46,22 @@ const handleSubmit =(e)=>{
             
 
 
-            <DatePicker selected ={selectedDate} onChange={date=>setSelectedDate(date)} popperPlacement="bottom-end" />
+            {/* <DatePicker selected ={selectedDate} onChange={date=>setSelectedDate(date)} popperPlacement="bottom-end" /> */}
+       
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DatePicker
+        label="Birth Date"
+        value={selectedDate}
+        onChange={date=>setSelectedDate(date.$d)}
+        renderInput={(params) => <TextField {...params} />}
+      />
+    </LocalizationProvider>
 
             
-            <button>Submit</button>
+            <button className='submitbtn' style={{marginLeft:'50px', width:'90px', color:'#100c08 ', fontWeight:'bold'}}>Submit</button>
            
         </form>
+        </div>
         
         
     )

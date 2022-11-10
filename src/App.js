@@ -17,7 +17,7 @@ function App() {
     <div className="app">
 
      
-
+    {console.log('hey there', selectedDate)}
      <div className='allcontainer' >
      <Typography variant="h4" align='center' style={{marginTop:20}} >Add a birthday!</Typography>
         <div className='form'>
@@ -25,9 +25,10 @@ function App() {
         </div>
      
         {console.log(birthdays )}
-        <div className='bdaylist'>
+        <div className='bdaylist' style={{position:'fixed'}}>
             <BdayList setBirthdays = {setBirthdays} birthdays = {birthdays}/>
         </div>
+       `{birthdays.length == 0 ? (<div style={{display:'flex', width:'850px', marginLeft:'550px', marginTop:'50px',position:'fixed'}}><h1>No birthdays to show Please Add a birthday</h1></div>):(<div></div>)}`
         
     </div>
     

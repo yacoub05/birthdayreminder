@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     tableContainer:{
 
         marginTop:6,
-        marginLeft:250,
+        marginLeft:500,
         width:800,
         overflowY: "auto",
         
@@ -133,6 +133,7 @@ const handleEdit =()=>{
 
     return (
         <TableContainer component={Paper} className={classes.tableContainer}>
+          {console.log('here ', rows.length)}
         <Table className={classes.table} size="small" aria-label="a dense table">
           {/* <TableHead>
             <TableRow>
@@ -144,7 +145,7 @@ const handleEdit =()=>{
             </TableRow>
           </TableHead> */}
           <TableBody>
-            {rows.map((row) => (
+            {rows.length > 0 ? ( rows.map((row) => (
 
               <StyledTableRow key={row.name}>
                 
@@ -162,7 +163,7 @@ const handleEdit =()=>{
                 </TableCell>
               </StyledTableRow>
               
-            ))}
+            ))):(<h1>Please add a birthday!</h1>) }
 
           
                 

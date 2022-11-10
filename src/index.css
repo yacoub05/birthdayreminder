@@ -42,7 +42,7 @@ form button {
    border-color: transparent;
 }
 form button:hover {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: #c7e5ff;
   color: white;
 }
 

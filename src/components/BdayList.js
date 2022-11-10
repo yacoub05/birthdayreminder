@@ -30,14 +30,14 @@ const useStyles = makeStyles({
     tableContainer:{
         
         marginTop:6,
-        marginLeft:250,
+        marginLeft:500,
         width:800,
         overflowY: "auto",
         
     },
     
     table: {
-      
+      justifyContent:'center',
       minWidth: 650,
     },
     tableCell: {
